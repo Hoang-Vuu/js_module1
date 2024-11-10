@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Roll Simulator</title>
+    <script>
+        function rollDice() {
+            const numOfRolls = parseInt(prompt("Enter the number of dice rolls:"));
+
+            if (isNaN(numOfRolls) || numOfRolls <= 0) {
+                document.getElementById("result").innerHTML = "Please enter a valid number of dice rolls.";
+                return;
+            }
+
+            let sum = 0;
+
+            for (let i = 0; i < numOfRolls; i++) {
+
+                const roll = Math.floor(Math.random() * 6) + 1;
+                sum += roll;
+            }
+
+            document.getElementById("result").innerHTML = `The sum of ${numOfRolls} dice rolls is: ${sum}`;
+        }
+    </script>
+</head>
+<body onload="rollDice()">
+    <h1>Dice Roll Simulator</h1>
+    <p id="result"></p>
+</body>
+</html>
