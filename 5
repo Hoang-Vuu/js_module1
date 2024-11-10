@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leap Year Checker</title>
+    <script>
+        function check() {
+            const year = parseInt(prompt("Enter a year:"));
+            let isLeapYear;
+            if (year % 4 === 0) {
+                if (year % 100 === 0) {
+
+                    isLeapYear = (year % 400 === 0);
+                } else {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = false;
+            }
+            if (isLeapYear) {
+                document.getElementById("result").innerHTML = `${year} is a leap year.`;
+            } else {
+                document.getElementById("result").innerHTML = `${year} is not a leap year.`;
+            }
+        }
+    </script>
+</head>
+<body onload="check()">
+    <h1>Leap Year Checker</h1>
+    <p id="result"></p>
+</body>
+</html>
